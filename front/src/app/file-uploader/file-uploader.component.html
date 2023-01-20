@@ -1,0 +1,33 @@
+<div class="upload">
+  <div class="upload-files">
+    <header>
+      <p>
+        <mat-icon class="icon-upload">cloud_upload</mat-icon>
+        <span>XML Uploader</span>
+      </p>
+    </header>
+    <div class="body" *ngIf="!loading">
+      <mat-icon class="icon-file material-icons-outlined">description</mat-icon>
+      <p>
+        Clique <b><label for="fileUploadInput">aqui</label></b> para iniciar<br />
+        o upload de arquivos
+      </p>
+
+      <input
+        id="fileUploadInput"
+        type="file"
+        multiple="multiple"
+        (change)="readFiles($event)"
+      />
+    </div>
+
+    <div class="loading-container" *ngIf="loading">
+      <mat-progress-spinner
+        class="example-margin"
+        color="primary"
+        mode="indeterminate"
+      >
+      </mat-progress-spinner>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    container_name: ccee-postgres
+    environment:
+      - POSTGRES_DB=ccee
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      # - './db:/docker-entrypoint-initdb.d/'
+      - '$PWD/.postgresql/:/var/lib/postgresql/data'
